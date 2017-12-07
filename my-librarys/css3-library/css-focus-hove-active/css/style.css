@@ -1,0 +1,13 @@
+body {
+    cursor: pointer;
+}
+
+ul {
+    background: gold;
+}
+
+ul li:active {
+    color: red;
+}
+
+

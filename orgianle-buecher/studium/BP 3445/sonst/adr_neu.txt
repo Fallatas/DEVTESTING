@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ Andernacher   Wilhelm   06157 1234   Asternweg 1    64319 Pfungstadt
+ Erlanger      Hans      06151 23812  Tulpenpfad 99  64295 Darmstadt
+ Hamburger     Wilma     06151 51249  Tulpenpfad 99  64295 Darmstadt
+ Koblenzer     August    069   234567 Lupinenstr.11  60433 Frankfurt/M
+ Krefelder     Jochen    06151 42322  Lavendelstie70 64297 Darmstadt
+ Lindauer      Betti     069   778899 Geranienhain69 60528 Frankfurt/M
+ Mainzer       Grete     06151 45612  Krokusberg 66  64285 Darmstadt
+ Nürnberger    Ingo      069   435790 Ligusterweg 31 60433 Frankfurt/M
+ Regensburger  Heinz     06157 8634   Rosenallee 44  64319 Pfungstadt

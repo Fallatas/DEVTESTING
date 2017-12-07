@@ -1,0 +1,9 @@
+echo
+echo -e "\n Geben Sie bitte das Unterverzeichnis an, "
+echo -n "dessen Inhalt Sie sichern wollen: "
+read verzeichnis
+ls $verzeichnis
+echo -n " Geben Sie den Namen der Archivdatei an (x.tgz): "
+read archiv
+tar cfz $archiv $verzeichnis
+tar tfz $archiv 

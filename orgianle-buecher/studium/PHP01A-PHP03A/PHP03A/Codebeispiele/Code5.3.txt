@@ -1,0 +1,37 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+public function setKundenDaten($daten)
+{
+  if(!is_array($daten)) return false;
+  try
+  {
+    $sql = "INSERT INTO ws_kunde (k_name, k_vorname, k_plz, k_ort,
+                                  k_strasse, k_email, k_passwort,
+                                  k_kennung)
+                 VALUES (:name, :vorname, :plz, :ort, :strasse,
+                                :email, :passwort, :kennung)";
+    $result = $this->dbh->prepare($sql);
+    $result->bindParam(':name', $daten['name'], PDO::PARAM_STR, 30);
+    $result->bindParam(':vorname', $daten['vorname'], PDO::PARAM_STR, 30);
+    $result->bindParam(':plz', $daten['plz'], PDO::PARAM_STR, 6);
+    $result->bindParam(':ort', $daten['ort'], PDO::PARAM_STR, 20);
+    $result->bindParam(':strasse', $daten['strasse'], PDO::PARAM_STR, 30);
+    $result->bindParam(':email', $daten['email'], PDO::PARAM_STR, 30);
+    $result->bindParam(':passwort', $daten['passwort'], PDO::PARAM_STR, 32);
+    $result->bindParam(':kennung', $daten['kennung'], PDO::PARAM_STR, 20);
+    $result->execute();
+    if($result->rowCount()== 1)
+    {
+      print "Datensatz wurde eingetragen.";
+      return true;
+    }
+    else
+      return false;
+  }
+  catch(PDOException $e)
+  {
+    echo $e->getMessage();
+  }
+}

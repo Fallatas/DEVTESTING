@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+</head>
+<body>
+    <script>
+        var d = new Date(2014,3,2);
+        alert(d);
+
+        var filme = new Array('Herr der Ringe','Kick-Ass','James Bond','Road Trip');
+        document.write(filme[0]);
+        var bild1 = new Image();
+        bild1.src = 'button.png';
+        var meinBild = 'button.png';
+        document.write("<img src='button.png' />");
+
+       var meinObject = {methode: function () {
+           document.write('Das ist eine Methode')
+       },name:"Hier ist der Name!"};
+
+        meinObject.methode();
+        document.write("<br>");
+        document.write(meinObject.name);
+        var neuesObject = {meineneueMethode: function () {
+            document.write('Das ist die neuste Methode')
+        }};
+        neuesObject.meineneueMethode();
+    </script>
+
+</body>
+</html>

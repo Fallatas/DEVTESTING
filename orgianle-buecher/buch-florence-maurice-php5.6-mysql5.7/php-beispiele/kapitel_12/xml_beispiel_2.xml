@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<person id="nr1">
+  <name>
+    <vorname>Werner</vorname>
+    <nachname>Weberknecht</nachname>
+  </name>
+  <adresse art="privat">
+    <plz>12345</plz>
+    <ort>Am Hügel</ort>
+  </adresse>
+  <adresse art="beruflich">
+    <plz>12345</plz>
+    <ort>Stadt</ort>
+  </adresse>
+</person>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Zebratabelle</title>
+  <style type="text/css">
+    body { 
+      font-size: 80%; 
+      font-family: sans-serif;
+    }
+    table { 
+      width: 500px; 
+      border-collapse: collapse;
+    }
+  </style>
+  <script  src="jquery.js"></script>
+  <script>
+  $(function() {
+    //$('.datentabelle tr:nth-child(even)').css('background-color', 'gray');
+    $('.datentabelle tr:nth-child(even)').css({
+       'background-color': 'gray',
+       'color' : 'white'
+     });
+  });
+  </script>
+</head>
+<body >
+<table class="datentabelle">
+  <tr><th>Lorem</th><th>ipsum</th><th>Dolor</th></tr>
+  <tr><td>Lorem ipsum</td><td>ipsum</td><td>Dolor</td></tr>
+  <tr><td>Lorem</td><td>ipsum dolor</td><td>Dolor lorem</td></tr>
+  <tr><td>Ipsum</td><td>Lorem ipsum dolor</td><td>Dolor</td></tr>
+  <tr><td>Lorem ipsum</td><td>ipsum</td><td>Dolor</td></tr>
+  <tr><td>Lorem</td><td>ipsum dolor</td><td>Dolor lorem</td></tr>
+  <tr><td>Ipsum</td><td>Lorem ipsum dolor</td><td>Dolor</td></tr>
+  <tr><td>Lorem ipsum</td><td>ipsum</td><td>Dolor</td></tr>
+  <tr><td>Lorem</td><td>ipsum dolor</td><td>Dolor lorem</td></tr>
+  <tr><td>Ipsum</td><td>Lorem ipsum dolor</td><td>Dolor</td></tr>
+</table>
+</body>
+</html>

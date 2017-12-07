@@ -1,0 +1,34 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+public function setKundenNummer($kennung, $passwort)
+{
+  $this->KndNr = 0;
+  if(!empty($kennung) && !empty($passwort))
+  {
+    try
+    {
+      $sql = "SELECT k_kundennummer 
+                FROM ws_kunde
+               WHERE k_kennung = :kennung
+                 AND k_passwort = :passwort";
+      $result = $this->dbh->prepare($sql);
+      $result->bindParam(':kennung', $kennung, PDO::PARAM_STR, 20);
+      $result->bindParam(':passwort', $passwort, PDO::PARAM_STR, 32);
+      $result->execute();
+
+      $tmp = $result->fetchAll();
+      if(isset($tmp[0]['k_kundennummer']) && !empty($tmp[0]['k_kundennummer']))
+      {
+        $this->KndNr = (integer)$tmp[0]['k_kundennummer'];
+      }
+      $_SESSION['kunde'] = $this->KndNr;
+        return $this->KndNr;
+    }
+    catch(PDOException $e)
+    {
+      echo $e->getMessage();
+    }
+  }
+}

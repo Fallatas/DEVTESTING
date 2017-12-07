@@ -1,0 +1,22 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+class kunde
+{
+  private $KndNr = 0;
+  private $dbh;
+
+  public function __construct(&$dbh)
+  {
+    if (is_object($dbh) && ($dbh instanceof PDO))
+      $this->dbh = $dbh;
+    else
+      $this->KndNr = time();
+    if (isset($_SESSION['kunde']))
+    {
+      $this->KndNr = $_SESSION['kunde'];
+    }
+  }
+# Weitere Methoden der Klasse sind nicht angezeigt.
+}

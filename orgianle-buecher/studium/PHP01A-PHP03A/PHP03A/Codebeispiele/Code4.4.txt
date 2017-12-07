@@ -1,0 +1,27 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+public function auswahl($kunde) # zeigt ausgewählte Artikel
+{
+  $sql = "SELECT a_name, w_menge
+            FROM ws_warenkorb, ws_artikel 
+           WHERE w_kunde = $kunde
+             AND w_artikelnr = a_artikelnr";
+  $result = $this->dbh->query($sql);
+  $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
+  if (count($tmp) > 0)
+  {
+    print "<table>\n";
+    print "  <tr>\n   <th>Artikel</th><th>Anzahl</th>\n  </tr>\n";
+    foreach($tmp as $key)
+    {
+      print "  <tr>\n";
+      print "    <td>".$key['a_name']."</td><td>".$key['w_menge']."</td>\n";
+      print "  </tr>\n";
+    }
+    print "</table>\n";
+  }
+  else
+    print "Keine Artikel im Warenkorb gefunden.";
+}

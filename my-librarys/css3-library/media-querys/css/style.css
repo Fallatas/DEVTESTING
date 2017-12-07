@@ -1,0 +1,18 @@
+@media only screen and (min-width: 1280px) {
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+    /* Immer wieder im nächsten Schritt die min width der Weite anpassen */
+    /* min-width: 768px and  max-width: 960px*/
+    /* Damit alles überlappt */
+}
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+    /* Immer wieder im nächsten Schritt die min width der Weite anpassen */
+    /* min-width: 960px and  max-width: 1024px */
+    /* Damit alles überlappt */
+}
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+    /* Immer wieder im nächsten Schritt die min width der Weite anpassen */
+    /* min-width: 768px and  max-width: 960px */
+    /* Damit alles überlappt */
+}

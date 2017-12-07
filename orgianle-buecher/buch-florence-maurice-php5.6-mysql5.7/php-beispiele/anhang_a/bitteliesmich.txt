@@ -1,0 +1,2 @@
+Damit das Beispiel klappt, müssen Sie die FirePHP-Klasse herunterladen von http://www.firephp.org/HQ/Install.htm
+

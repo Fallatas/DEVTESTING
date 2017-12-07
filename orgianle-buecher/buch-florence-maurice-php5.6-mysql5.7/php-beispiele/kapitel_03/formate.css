@@ -1,0 +1,7 @@
+ body { font-family: Verdana, sans-serif; }
+  .stil1 { font-style: italic; }
+  .stil2 { color: red; background-color: yellow; font-size: 1.5em; }
+  .stil3 { font-weight: bold; text-align: center; }
+  .stil4 { border: 2px dotted blue; padding: 20px; }
+  .stil5 { width: 400px; height: 80px; background-color: orange; }
+  p { background-color: #DDDDDD; }

@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.menu-style {
+    height: 29px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+.wl-line1 {
+    height: 5px;
+    width: 40px;
+    background: black;
+    border-radius: 7px;
+}
+
+.wl-line2 {
+    height: 5px;
+    width: 40px;
+    background: black;
+    border-radius: 7px;
+    margin-top: 7px;
+}
+
+.wl-line3 {
+    height: 5px;
+    width: 40px;
+    background: black;
+    border-radius: 7px;
+    margin-top: 7px;
+}
+
+nav {
+    height: 100%;
+    width: 10%;
+    display: none;
+    background: #252D35;
+    border-radius: 5px;
+}
+
+

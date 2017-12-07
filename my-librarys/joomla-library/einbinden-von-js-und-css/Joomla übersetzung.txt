@@ -1,0 +1,101 @@
+
+Einf�gen aus einer Datei
+
+Um ein gut geformtes HTML-Dokument zu haben, m�ssen Sie alle Verweise auf Javascript- und CSS-Dateien im Abschnitt <head> setzen. Seit Joomla! 
+Generiert alle HTML, die eine Seite vor der Ausgabe bildet, ist es m�glich, diese Referenzen innerhalb der <head> -Tags aus Ihrer Erweiterung hinzuzuf�gen.
+Der einfachste Weg, dies zu tun ist, nutzen Sie die Funktionalit�t in Joomla integriert.
+
+JDocument
+
+Dies ist eine viel weniger flexible Option. Allerdings ist es effizienter f�r eine gro�e Anzahl von Szenarien wie zum Beispiel ein Stylesheet in einer Vorlage.
+Nat�rlich m�ssen Sie auch manuell einige Schritte manuell kodieren, die automatisch mit der JHtml-Methode durchgef�hrt werden.
+
+
+
+
+Zuerst erhalten Sie einen Verweis auf das aktuelle Dokumentobjekt:
+
+------------------------------------------
+$document = JFactory::getDocument();
+------------------------------------------
+
+
+
+
+Verwenden Sie dann f�r ein Stylesheet diesen Code:
+
+---------------------------------------------
+$document->addStyleSheet($url);
+---------------------------------------------
+
+
+
+Verwenden Sie diesen Code, um eine Javascript-Datei hinzuzuf�gen:
+
+---------------------------------------------
+$document->addScript($url);
+---------------------------------------------
+
+Wobei $ url die Variable mit dem vollst�ndigen Pfad zum Javascript oder der CSS-Datei ist: JUri :: base (). 'Vorlagen / custom / js / sample.js'
+
+Beachten Sie dies **NOT** nicht enthalten Mootools oder jQuery. Wenn Ihr Skript ben�tigt Mootools oder jQuery siehe Javascript Frameworks f�r alle Details,
+ wie sie enthalten (beachten Sie, jQuery kann nur nativ auf Joomla! 3.0 hinzugef�gt werden).
+
+JHtml
+
+JHtml bietet viel mehr Flexibilit�t als JDocument, w�hrend die gleiche Basis-Funktionalit�t - tats�chlich am Ende des Tages JHtml ruft
+
+--------------------------------------------------------------------------------------
+JFactory::getDocument()->addStyleSheet() oder JFactory::getDocument()->addScript().
+--------------------------------------------------------------------------------------
+
+Wenn Sie nur einen geraden Dateipfad, in einer Vorlage zum Beispiel, dann sind Sie besser mit JDocument m�chten.
+Allerdings, wenn Sie ber�cksichtigen m�chten, ob Debuggen aktiviert ist, um ein komprimiertes Skript enthalten oder nutzen Sie die Vorlage �berschreibbare Skripts und Stylesheets dann mit JHtml ist in der Regel besser.
+Es wird empfohlen, alle 3rd-Party-Entwickler mit JHtml Template-Overrides ihrer CSS und Javascript f�r Template-Designer zu erm�glichen.
+
+
+
+JHtml::script
+
+Das folgende ist die Signatur dieser Funktion, sehen Sie mehr an JHtml::script on api.joomla.org:
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+script(string $file, boolean $framework = false, boolean $relative = false, boolean $path_only = false, boolean $detect_browser = true, boolean 
+$detect_debug = true) : mixed
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Mit JHtml eine Javascript-Datei enthalten k�nnen Sie mehrere Vorteile bringen. Die erste davon ist, 
+wenn Ihre Javascript-Datei eine mootools Abh�ngigkeit hat, k�nnen Sie sie automatisch einf�gen, indem Sie den zweiten Parameter dieser Methode auf true setzen, wie unten:
+
+-------------------------------------------------------------------------
+<?php
+JHtml::script(JUri::base() . 'templates/custom/js/sample.js', true);
+?>
+-------------------------------------------------------------------------
+
+Beachten Sie, dass das js-Unterverzeichnis, das im com_search-Verzeichnis durchsucht wird, nicht in der JHtml-Methode angegeben werden darf.
+
+Jedoch dar�ber hinaus, wenn eine Datei in js/com_search/search.js vorhanden ist, wird diese stattdessen enthalten. Zum Beispiel sagen,
+eine Erweiterung hat eine mootools abh�ngige Datei, aber der Benutzer will nur jQuery geladen werden. Dies bedeutet, dass ein Benutzer die Datei mit einer jQuery-Version �berschreiben k�nnte.
+Standardm��ig enth�lt Joomla automatisch eine komprimierte und unkomprimierte Version von Skripts, je nachdem, ob der Debug-Modus aus- oder eingeschaltet ist. 
+Rufen Sie Ihr komprimiertes Skript search.min.js und die unkomprimierte Version script-uncompressed.js oder submit-event.js an, um diese Funktionalit�t zu nutzen und mit dem Debuggen von Skripten zu helfen.
+Sie sollten die Funktion mit der komprimierten Version wie folgt aufrufen:
+
+----------------------------------------------
+<?php
+JHtml::script('com_search/search.min.js');
+?>
+----------------------------------------------
+
+Dar�ber hinaus k�nnen Sie Browser-spezifische Dateien. Joomla kann die Dateien der folgenden Typen suchen:
+
+   * filename.ext
+   * filename_browser.ext
+   * filename_browser_major.ext
+   * filename_browser_major_minor.ext
+
+Dies kann Ihnen erm�glichen, Internet Explorer 6 spezifische Dateien zum Beispiel enthalten. Durch eine search.js f�r allgemeine Verwendung mit einem search_msie_6.js f�r eine Datei mit extra Internet Explorer 6 behebt.
+
+
+
+

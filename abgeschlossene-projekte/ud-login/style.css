@@ -1,0 +1,42 @@
+#Kontakt .ud_kontakt .contact #contact-form {
+
+}
+
+#Kontakt .ud_kontakt .contact #contact-form font input {
+    margin: 10% 10% 0 10%;
+    width: 70%;
+    padding: 5%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #dadada;
+    background: -webkit-linear-gradient(top,rgba(255, 255, 255, 0) 99%, #dadada 1%);
+    background: linear-gradient(bottom, rgba(255, 255, 255, 0) 99%, #dadada 1%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+#Kontakt .ud_kontakt .contact #contact-form input:focus {
+    outline: none;
+    background-size: 100% 100%;
+}
+
+#Kontakt .ud_kontakt .contact #contact-form input:focus::-webkit-input-placeholder {
+    font-size: 11px;
+    -webkit-transform: translateY(-25px);
+
+    visibility: visible !important;
+}
+
+#Kontakt .ud_kontakt .contact #contact-form input:focus:valid::-webkit-input-placeholder, input:valid {
+    color:#14DC19;
+    border-color: #14DC19;
+}
+
+#Kontakt .ud_kontakt .contact #contact-form input:focus:invalid::-webkit-input-placeholder, input:invalid {
+    color: #C9272A;
+    border-color: #C9272A;
+}
+
+
+

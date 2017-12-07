@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Tabelle - cellpadding und cellspacing</title>
+<style type="text/css">
+/* Diese CSS-Anweisung sorgt dafür, dass die Tabellen nebeneinander
+   angezeigt werden, mit 10px Abstand*/
+ table { float: left; margin: 10px;}
+</style>
+</head>
+<body>
+  <table border="1" cellspacing="10">
+    <tr><th colspan="2">cellspacing="10"</th></tr>
+    <tr>
+      <td>A</td><td>B</td>
+    </tr>
+    <tr>
+      <td>C</td><td>D</td>
+    </tr>
+  </table>
+  <table border="1" cellpadding="10">
+    <tr><th colspan="2">cellpadding="10"</th></tr>
+    <tr>
+      <td>A</td><td>B</td>
+    </tr>
+    <tr>
+      <td>C</td><td>D</td>
+    </tr>
+  </table>
+</body>
+</html>

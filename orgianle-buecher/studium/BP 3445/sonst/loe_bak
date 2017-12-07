@@ -1,0 +1,14 @@
+clear
+echo "Suchen aller Backup-Dateien im angegebenen Verzeichnis"
+echo
+ls $1*~ --color
+echo
+echo "Loeschen aller Backup-Dateien im angegebenen Verzeichnis"
+echo "nach 'Return'"
+echo "Abbrechen mit Strg+c "
+read variable
+echo
+rm $1*.*~
+rm $1*~
+ls $1 --color
+echo

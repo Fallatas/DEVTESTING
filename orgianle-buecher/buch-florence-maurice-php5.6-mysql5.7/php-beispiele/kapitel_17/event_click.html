@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Events</title>
+  <style>
+    body { 
+      font-size: 120%; 
+      font-family: sans-serif;
+    }
+    p {
+       background-color: #ddd;
+       padding: 20px;
+    }
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+ $(function() {
+  $('#meldung').click(function() {
+    alert('Hallo');
+  });
+ });
+  </script>
+</head>
+<body >
+ <p id="meldung">Klick mich mal</p>
+</body>
+</html>

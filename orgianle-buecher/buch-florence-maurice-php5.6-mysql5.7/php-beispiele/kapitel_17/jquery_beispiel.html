@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<meta charset="UTF-8" />
+<title>Einstieg jQuery</title>
+<style>
+#beispiel {
+  width: 400px;
+  background-color: orange;
+  color: black;
+  font: 200% sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+<script  src="jquery.js"></script>
+<script>
+$(function() {
+  $('#beispiel').hide().fadeIn(4000);
+});
+</script>
+</head>
+<body>
+<div id="beispiel">
+ Guten Morgen jQuery :-)
+</div>
+</body>
+</html>

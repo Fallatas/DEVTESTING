@@ -1,0 +1,32 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+[class*="zocial-"]:before {
+    font-family: "zocial", sans-serif;
+}
+
+@-moz-keyframes skype {
+
+    0% {
+        font-size: 300px;
+        color: red;
+    }
+
+    50% {
+        font-size: 500px;
+        color: gray;
+    }
+
+    100% {
+        font-size: 150px;
+        color: #0B55C4;
+    }
+
+}
+
+span{
+    font-size: 300px;
+    -moz-animation-name: skype; /* Hier wird der Name der Animation angegeben */
+    -moz-animation-duration: 3s; /* Wie lange es dauern soll */
+    -moz-animation-delay: 200ms; /* Wie lange es dauert bis die Animation durchgelaufen wird. */
+    -moz-animation-iteration-count: 2; /* Wie oft alles wiederholt werden soll. */
+}

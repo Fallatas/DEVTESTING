@@ -1,0 +1,15 @@
+.active{
+    z-index:99;
+}
+
+img {
+    width: 1300px;
+    height: 700px;
+}
+
+#scrollbar {
+    height: 5px;
+    width: 0;
+    background: orangered;
+    border-radius: 20px;
+}

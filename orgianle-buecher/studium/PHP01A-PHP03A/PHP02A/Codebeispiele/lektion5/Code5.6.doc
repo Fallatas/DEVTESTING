@@ -1,0 +1,16 @@
+public function pdfliste()
+{
+  $this->pdf->setTitel("Liste bestellbarer Artikel");
+  $this->pdf->AliasNbPages();
+  $this->pdf->AddPage();
+  $this->pdf->SetFont('Times','',12);
+  $text = "Sehr geehrter Kunde,\n\nvielen Dank, dass Sie sich".
+          " für unser Angebot interessieren. Folgende Artikel".
+          " können Sie in unserem Online-Shop (http://".$_SERVER['HTTP_HOST'].") bestellen.\n";
+  $this->pdf->setText($text);
+
+  $this->setArtikel($this->artikelArray);
+  $text = "\n\nVielen Dank für Ihr Interesse.";
+  $this->pdf->setText($text);
+  $this->pdf->Output();
+}

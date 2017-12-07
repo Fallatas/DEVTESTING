@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Option</title>
+</head>
+<body>
+<form>
+    <input> <br>
+    <select size="4" onchange="alert('Sie haben etwas selektiert');">
+        <option>Bitte wählen Sie</option>
+        <option value="wert 1">Auswahl 1</option>
+        <option value="wert 2">Auswahl 2</option>
+        <option value="wert 3" >Auswahl 3</option>
+        <option value="wert 4">Auswahl 4</option>
+        <option value="wert 5">Auswahl 5</option>
+    </select>
+    <input value="Senden" type="submit" onclick="Oeffnen()">
+</form>
+</body>
+<script>
+    function Oeffnen() {
+        var optionsanzahl = document.forms[0].elements[1].options.length; // Hier wird die länge der Optionen ausgelesen.In unserem Fall hat es den Wert 6. //
+        var index = document.forms[0].elements[1].options.selectedIndex; // Hier wird in index der ausgewälte Wert gespeichert. //
+        var auswahl = document.forms[0].elements[1].options[index];      // Hier wird der ausgewählte Wert festfelegt aber bis jetzt wird noch kein Text ausgegeben. //
+        var text = auswahl.text;                                         // Hier wird der ausgewählten Auswahl der Text von Options gegeben. //
+        var text2 = auswahl.value;                                        // Hier könnte man auf den value Wert zugreifen der in den Options gestgelegt wurde. //
+        alert(text);
+    }
+</script>
+</html>

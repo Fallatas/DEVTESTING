@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_emptymodul</name>
+	<author>Thomas Winterling</author>
+	<creationDate>07.06.2016</creationDate>
+	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>fallatas85@gmail.com</authorEmail>
+	<authorUrl>Winterling-Labs</authorUrl>
+	<version>3.0.0</version>
+	<description>Mein_Leeres_Modul</description>
+	<files>
+		<folder>tmpl</folder>
+		<filename module="mod_emptymodul">mod_emptymodul.php</filename>
+		<filename>helper.php</filename>
+	</files>
+</extension>

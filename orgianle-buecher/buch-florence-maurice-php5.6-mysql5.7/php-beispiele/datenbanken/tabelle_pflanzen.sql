@@ -1,0 +1,6 @@
+CREATE TABLE `garten`.`pflanzen` (
+`pfl_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 50 ) NOT NULL ,
+`beschreibung` VARCHAR( 150 ) NULL ,
+`preis` DECIMAL( 9, 2 ) NULL
+) ENGINE = MYISAM ;

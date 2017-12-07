@@ -1,0 +1,10 @@
+echo
+echo -e "\nGeben Sie bitte den Namen des ersten Verzeichnisses an: "
+read variable1
+echo -e "\nGeben Sie bitte den Namen des zweiten Verzeichnisses an: "
+read variable2
+echo
+ls --color $variable1
+echo -e "\nDruecken Sie bitte die Taste 'Return' "
+read variable
+ls -l --color $variable2 |more

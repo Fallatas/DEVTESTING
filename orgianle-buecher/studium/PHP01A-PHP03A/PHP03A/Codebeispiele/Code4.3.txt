@@ -1,0 +1,40 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+public function waehlen($artikelnummer, $kunde)
+{
+  if(!empty($artikelnummer) && !empty($kunde))
+  {
+    try
+    {
+      $sql = "UPDATE ws_warenkorb
+                 SET w_menge = w_menge + 1
+               WHERE w_artikelnr = :nummer
+                 AND w_kunde = :kunde";
+      $result = $this->dbh->prepare($sql);
+      $result->bindParam(':nummer', $artikelnummer, PDO::PARAM_INT);
+      $result->bindParam(':kunde', $kunde, PDO::PARAM_INT);
+      $result->execute();
+      if ($result->rowCount() == 1)
+        return true;
+
+      $sql ="INSERT INTO ws_warenkorb (w_artikelnr, w_kunde, w_menge)
+                  VALUES (:nummer, :kunde, 1)";
+      $result = $this->dbh->prepare($sql);
+      $result->bindParam(':nummer', $artikelnummer, PDO::PARAM_INT); 
+      $result->bindParam(':kunde', $kunde, PDO::PARAM_INT);
+      $result->execute();
+      if($result->rowCount()== 1)
+      {
+        print "Datensatz wurde eingetragen.";
+          return true;  
+      }
+      return false;
+    }
+    catch(PDOException $e)
+    {
+      echo $e->getMessage();
+    }
+  }
+}

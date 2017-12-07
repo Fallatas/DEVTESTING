@@ -1,0 +1,3 @@
+Eine Beispieldatei mit mehreren Zeilen Text. 
+Das war die erste und hier ist die zweite. 
+Eine dritte folgt hier.   

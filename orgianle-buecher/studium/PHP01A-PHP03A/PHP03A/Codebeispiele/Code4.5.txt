@@ -1,0 +1,58 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen in die Klasse.
+
+public function bestellen($kunde)
+{
+  if(!is_integer($kunde))  # Gültige Kundennummer?
+    throw new Exception('Keine Kundennummer'); # Fehler ausgeben
+  else
+  {
+    try
+    {
+      #in Datenbank schreiben
+      $sql = "SELECT w_kunde, w_artikelnr, w_menge
+                FROM ws_warenkorb 
+               WHERE w_kunde = :kunde";
+      $result = $this->dbh->prepare($sql);
+      $result->bindParam(':kunde', $kunde, PDO::PARAM_INT);
+      $result->execute();
+      $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
+      foreach($tmp as $key => $value)
+      {
+        $sql = "INSERT INTO ws_bestellung (b_kunde, b_artikelnr, b_menge)
+                     VALUES (:kunde, :artikel, :menge)";
+        $result = $this->dbh->prepare($sql);
+        $result->execute(array(':kunde' => (int)$value['w_kunde'],
+                               ':artikel' => (int)$value['w_artikelnr'],
+                               ':menge' => $value['w_menge']));
+        if($result->rowCount() == 1)
+        {
+          $sql1 = "UPDATE ws_artikel 
+                      SET a_menge = a_menge - :anzahl 
+                    WHERE a_artikelnr = :artikel";
+          $result1 = $this->dbh->prepare($sql1);
+          $result1->bindParam(':anzahl', $value['w_menge'], PDO::PARAM_INT);
+          $result1->bindParam(':artikel', $value['w_artikelnr']);
+          $result1->execute();
+          if ($result1->rowCount() == 1)
+          {
+            $sql2 = "DELETE FROM ws_warenkorb 
+                           WHERE w_kunde = :kunde
+                             AND w_artikelnr = :artikel";
+            $sth2 = $this->dbh->prepare($sql2);
+            $sth2->execute(array(':kunde' => (int)$kunde,
+                                 ':artikel' => (int)$value['w_artikelnr']));
+          }
+          $error = true;
+        }
+      }
+    }
+    catch(PDOException $e)
+    {
+      echo $e->getMessage();
+    }
+  }
+  session_destroy();
+  return $error;
+}

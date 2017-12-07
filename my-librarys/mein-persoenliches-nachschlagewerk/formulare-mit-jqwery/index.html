@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.0.js"></script>
+</head>
+<body>
+    <form>
+        <input>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("input").on("keyup",function () {
+                ud_fill_val(this);
+            });
+
+            function ud_fill_val(UD_OBJEKT) {
+                var UD_VALUE = $(UD_OBJEKT).val();
+                console.log(UD_VALUE);
+                if (UD_VALUE === false){
+                    console.log("false");
+                    return false;
+                }else{
+                    console.log("true");
+                    return true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

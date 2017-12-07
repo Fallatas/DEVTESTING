@@ -1,0 +1,20 @@
+.flexbox {
+    width: 90%;
+    margin: 5%;
+    background: #dadada;
+}
+
+.flexelement {
+    background: #ff6600;
+    color: #ffffff;
+    text-align: center;
+    margin: 10px;
+    padding: 15px 0 15px 0;
+}
+
+.flexbox {
+    display: flex;
+   /* flex-direction: row; /* In einer Reihne */
+   /* flex-direction: column; /* Übereinander */
+}
+

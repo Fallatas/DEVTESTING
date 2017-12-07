@@ -1,0 +1,16 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen.
+
+if(isset($_REQUEST['neuanmeldung']))
+  $art->setKundenDaten(
+       array(
+             'name'     => $_REQUEST['name'],
+             'vorname'  => $_REQUEST['vorname'],
+             'plz'      => $_REQUEST['plz'],
+             'passwort' => $_REQUEST['passwort'],
+             'ort'      => $_REQUEST['ort'],
+             'strasse'  => $_REQUEST['strasse'],
+             'kennung'  => $_REQUEST['kennung'],
+             'email'    => $_REQUEST['email'])
+            );

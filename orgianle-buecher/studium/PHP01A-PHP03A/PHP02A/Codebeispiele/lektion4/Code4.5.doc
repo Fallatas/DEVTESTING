@@ -1,0 +1,13 @@
+public function __construct($dateiname)
+{
+  $data = simplexml_load_file($dateiname);
+  foreach($data as $key => $value)
+  {
+    $artNr = intval($value->attributes());
+    foreach($v as $key1 => $value1)
+    {
+      print "$artNr $key1: $value1.<br>\n";
+      $this->artikelArray[$artNr][$key1] = (string)$value1;
+    }
+  }
+}

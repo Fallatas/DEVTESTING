@@ -1,0 +1,6 @@
+echo
+ls --color
+echo -e "\n\t Bitte druecken Sie die Taste 'Return' "
+read variable
+ls -l --color |more
+ 

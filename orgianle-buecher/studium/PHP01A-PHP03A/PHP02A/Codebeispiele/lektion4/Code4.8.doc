@@ -1,0 +1,17 @@
+public function bestellen($file = "bestellung.xml")
+{
+  if(count($this->korb) > 0)
+  {
+    $xml = new SimpleXMLElement("<bestellung></bestellung>");
+    foreach($this->korb as $key => $value) # Alle Artikel bearbeiten
+    {
+      $art = $xml->addChild("artikel"); # Neues <artikel>-Element
+      $art->addAttribute("nummer", $key);
+      $art->addAttribute("anzahl", $value);
+    }
+    $error = $xml->asXML($file);  # Datei schreiben.
+    $this->korb = array();    # Auswahl löschen.
+    return $error;
+  }
+  return false; # keine Artikel ausgewählt
+}

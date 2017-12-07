@@ -1,0 +1,13 @@
+### ACHTUNG Dies ist kein ausfuehrbares PHP-Programm,
+# sondern nur der Programmcode aus dem Lernheft zum
+# Einfuegen.
+
+$text[5][0]="<h3>Bitte melden Sie sich an.</h3>";
+$text[5][1]="<form method=\"post\" accept-charset=\"utf-8\">";
+$text[5][3]="<table>";
+$text[5][4]="<tr>\n<td>Anmeldename: </td><td><input name=\"kennung\" type=\"text\"></td>\n</tr>";
+$text[5][5]="<tr>\n<td>Passwort: </td><td><input name=\"passwort\" type=\"password\"></td>\n</tr>";
+$text[5][6]="<tr>\n<td colspan=\"2\" align=\"center\"><hr><input type=\"submit\" "value=\"anmelden\"></td>\n</tr>";
+$text[5][7]="</table>";
+$text[5][8]="</form>\n<br />";
+$text[5][9]="<a href=\"".$_SERVER['PHP_SELF']."?neu\">Neuer Kunde?</a>";

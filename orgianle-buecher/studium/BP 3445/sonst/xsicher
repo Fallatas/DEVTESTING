@@ -1,0 +1,6 @@
+echo
+echo -e "\nGeben Sie bitte die Archivdatei an, deren Inhalt "
+echo -e "\nSie zurueckholen wollen (x.tgz):                 "
+read archiv
+tar tfz $archiv
+tar xfz $archiv

@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+}
+
+nav {
+    padding-top: 1px;
+    background-color: #4FB7D4;
+    width: 100%;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+nav ul {
+    position: relative;
+    top: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: none;
+    display: inline;
+    text-align: center;
+    border: 1px solid beige;
+}
+
+nav ul li:hover {
+    background-color: beige;
+}
+
+
+/*
+https://www.youtube.com/watch?v=7wJw2V0z_9k
+
+@media (max-width: 800px){
+    nav {
+        background-color: #4FB7D4;
+        height: 222px;
+        padding-top: 1px;
+    }
+
+    nav ul li {
+        display: block;
+    }
+}
+
+*/

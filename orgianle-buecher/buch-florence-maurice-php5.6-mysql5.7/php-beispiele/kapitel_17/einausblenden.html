@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Ein-Ausblenden</title>
+  <style>
+    body { 
+      font-size: 120%; 
+      font-family: sans-serif;
+    }
+    p {
+       background-color: #ddd;
+       padding: 20px;
+       width: 300px;
+    }
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+$(function() {
+    $('#inhalt').hide();
+    $('#einaus').css('cursor', 'pointer').click(function() {
+    
+      $('#inhalt').toggle();
+      
+    }); 
+  });
+  </script>
+</head>
+<body >
+ <p id="einaus">Bitte klicken</p>
+ <p id="inhalt">Dieser Inhalt wird wechselnd ein- und ausgeblendet</p>
+</body>
+</html>

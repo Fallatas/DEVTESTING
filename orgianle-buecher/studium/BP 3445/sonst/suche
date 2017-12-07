@@ -1,0 +1,24 @@
+echo
+echo "Geben Sie das Jahr an: "       # Textausgabe
+echo [1] Jahr_1                      # Auflistung
+echo [2] Jahr_2
+echo [3] Jahr_3
+echo [4] Jahr_4
+read jahr                            # Eingabe der Kennziffer
+if [ "$jahr" = "1" ]                 # Wurde Jahr_1 ausgewaehlt?
+then                                 # Ja! Also den Pfad 
+jahr_x=~/linutest/kdk/jahr_1         # auf Jahr_1 setzen
+fi
+if [ "$jahr" = "2" ]                 # Wurde Jahr_2 ausgewaehlt?
+then                                 # Ja! Also den Pfad 
+jahr_x=~/linutest/kdk/jahr_2         # auf Jahr_2 setzen
+fi
+if [ "$jahr" = "3" ]                 # Wurde Jahr_3 ausgewaehlt?
+then                                 # Ja! Also den Pfad 
+jahr_x=~/linutest/kdk/jahr_3         # auf Jahr_3 setzen
+fi
+if [ "$jahr" = "4" ]                 # Wurde Jahr_4 ausgewaehlt?
+then                                 # Ja! Also den Pfad 
+jahr_x=~/linutest/kdk/jahr_4         # auf Jahr_4 setzen
+fi
+ls -l --color "$jahr_x"

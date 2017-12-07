@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+.header {
+    width: 60%;
+    height: 150px;
+    background-color: #4FB7D4;
+    padding-top: 1px;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: fixed;
+}
+
+.header-2 {
+    width: 60%;
+    height: 150px;
+    background-color: #0f192a;
+    padding-top: 1px;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: fixed;
+}
+
+.content{
+    width: 60%;
+    height: 600px;
+    background-color: #6ca6cd;
+    padding-top: 1px;
+    margin-left: 20%;
+    margin-right: 20%;
+}

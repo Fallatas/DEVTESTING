@@ -1,0 +1,126 @@
+/**************************/
+/* WL Audio Volume Button */
+/**************************/
+
+#wl-volumebutton {
+    height: 20px;
+    width: 26px;
+}
+
+#wl-stufe-1 {
+    height: 20px;
+    width: 5px;
+    float: left;
+ }
+
+#wl-stufe-2 {
+    height: 20px;
+    width: 5px;
+    float: left;
+    margin-left: 2px;
+}
+
+#wl-stufe-3 {
+    height: 20px;
+    width: 5px;
+    float: left;
+    margin-left: 2px;
+}
+
+#wl-stufe-4 {
+    height: 20px;
+    width: 5px;
+    float: left;
+    margin-left: 2px;
+}
+
+/* Erster Button */
+
+#wl-volumebutton #wl-stufe-1 .top {
+    height: 15px;
+    width: 5px;
+    background: white;
+}
+
+#wl-volumebutton #wl-stufe-1 .bottom {
+    height: 5px;
+    width: 5px;
+    background: palegoldenrod;
+    border-radius: 10px;
+}
+
+/* Zweiter Button */
+
+#wl-volumebutton #wl-stufe-2 .top {
+    height: 10px;
+    width: 5px;
+    background: white;
+}
+
+#wl-volumebutton #wl-stufe-2 .bottom {
+    height: 10px;
+    width: 5px;
+    background: palegoldenrod;
+    border-radius: 10px;
+}
+
+/* Dritter Button */
+
+#wl-volumebutton #wl-stufe-3 .top {
+    height: 5px;
+    width: 5px;
+    background: white;
+}
+
+#wl-volumebutton #wl-stufe-3 .bottom {
+    height: 15px;
+    width: 5px;
+    background: palegoldenrod;
+    border-radius: 10px;
+}
+
+/* Vierter Button */
+
+#wl-volumebutton #wl-stufe-4 .top {
+    height: 0;
+    width: 5px;
+    background: white;
+}
+
+#wl-volumebutton #wl-stufe-4 .bottom {
+    height: 20px;
+    width: 5px;
+    background: palegoldenrod;
+    border-radius: 10px;
+}
+
+/* Hover */
+
+/* Erster Button */
+
+#wl-volumebutton #wl-stufe-1 .bottom:hover {
+    background: gray;
+}
+
+/* Zweiter Button */
+
+#wl-volumebutton #wl-stufe-2 .bottom:hover {
+    background: gray;
+}
+
+/* Dritter Button */
+
+#wl-volumebutton #wl-stufe-3 .bottom:hover {
+    background: gray;
+}
+
+/* Vierter Button */
+
+#wl-volumebutton #wl-stufe-4 .bottom:hover{
+    background: gray;
+}
+
+/**************************/
+/* WL Audio Volume Button */
+/********* Ende ***********/
+/**************************/

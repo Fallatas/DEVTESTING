@@ -1,0 +1,4 @@
+echo
+ls --color
+read variable
+ls -l 

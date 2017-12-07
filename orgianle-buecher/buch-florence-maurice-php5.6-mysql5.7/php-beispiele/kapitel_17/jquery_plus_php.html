@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+   <title>jQuery + PHP</title> 
+<script  src="jquery.js"></script>
+<script>
+  $(function () {
+    $('#art').change(function() {
+      if($(this).val() != "") {
+        $.get(
+          "daten.php",
+          { wahl: $(this).val() },
+          function(daten) {
+            $('#ausgabe').html(daten);
+          });
+      }
+    });
+  });
+</script>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label for="art">Pflanzenart</label>:
+        <select id="art" name="art">
+          <option value="">wählen</option>
+          <option value="Nutzpflanzen">Nutzpflanzen</option>
+          <option value="Zierpflanzen">Zierpflanzen</option>
+        </select>
+      </p>
+    </form>
+    <div id="ausgabe"></div>
+  </body>
+</html>

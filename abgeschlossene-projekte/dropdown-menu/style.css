@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding-top: 1px;
+    width: 100%;
+    height: 70px;
+    background-color: #292824;
+}
+
+ul {
+    color: #EB5872;
+    font-family: 'Lato', sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+
+li {
+    border-bottom: solid #EB5872;
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 25px 0 0;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    float: inherit;
+}
+
+li:hover {
+   color: lightcoral;
+}
+
+@media (max-width: 600px){
+
+    nav ul li {
+        font-size: small;
+    }
+}

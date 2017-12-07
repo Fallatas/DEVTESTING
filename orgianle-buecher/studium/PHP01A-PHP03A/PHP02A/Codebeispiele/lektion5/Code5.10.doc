@@ -1,0 +1,24 @@
+public function bestellen($kunde, $datei = "bestellung.xml")
+{
+  if(count($this->korb) > 0)
+  {
+    if(!is_integer($kunde))  # Gültigen Kundennummer?
+      throw new Exception('Keine Kundennummer'); # Fehler ausgeben
+    else
+    {
+      $xml = new SimpleXMLElement("<bestellung></bestellung>");
+      # Attribut "kunde" schreiben
+      $xml->addAttribute("kunde", $kunde);
+      foreach($this->korb as $key => $value) # Artikel bearbeiten
+      {
+        $art = $xml->addChild("artikel"); # Neues <artikel>-Element
+        $art->addAttribute("name", $key);
+        $art->addAttribute("anzahl", $value);
+      }
+      $error = $xml->asXML($datei);  # Datei schreiben.
+      $this->korb = array();    # Auswahl löschen.
+      return $error;
+    }
+    return false; # keine Artikel ausgewählt
+  }
+}

@@ -1,0 +1,14 @@
+private function setArtikel($daten)
+{
+  $this->pdf->SetLeftMargin(35); # Setzt Rand
+  $this->pdf->Cell(30,5,"Artikelnummer",1,0,'C');
+  $this->pdf->Cell(60,5,"Artikel",1,0,'C');
+  $this->pdf->Cell(30,5,"Preis",1,0,'R');
+  foreach ($daten as $key => $value)
+  {
+    $this->pdf->ln();
+    $this->pdf->Cell(30,5,$key,1,0,'C');
+    $this->pdf->Cell(60,5,iconv('UTF-8', 'ISO-8859-15',$value['name']),1,0);
+    $this->pdf->Cell(30,5,$value['preis']." Euro",1,0,'R');
+  }
+}
